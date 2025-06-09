@@ -22,19 +22,46 @@ function searchBooks() {
     }
 }
 
-function payer(idLivre, prix) {
-  const phone = prompt("Entrez votre numéro de téléphone pour payer via Cinepay :");
-  if (!phone) return;
+// Importation du SDK CinetPay
+<script src="https://cdn.cinetpay.com/seamless/main.js" type="text/javascript"></script>
 
-  const apikey = "6861781986846ea36f23686.63171484";
-  const site_id = "105897720";
-  const return_url = `https://tonsite.com/telechargement.html?livre=${idLivre}`;
+// Initialisation des paramètres
+CinetPay.setConfig({
+    apikey: '6861781986846ea36f23686.63171484', // Remplacez par votre clé API
+    site_id: 105897720, // Remplacez par votre ID de site
+    notify_url: 'https://mondomaine.com/notify/', // URL de notification
+    close_after_response: true // Fermer le guichet après paiement
+});
 
-  // 🔁 URL de redirection Cinepay avec tes infos
-  const cinepayURL = `https://app.cinepay.sn/pay?apikey=${apikey}&site_id=${site_id}&amount=${prix}&item_ref=${idLivre}&phone_number=${phone}&return_url=${encodeURIComponent(return_url)}`;
-
-  window.location.href = cinepayURL;
+// Fonction pour déclencher le paiement
+function effectuerPaiement(transactionId, montant, description) {
+    CinetPay.getCheckout({
+        transaction_id: transactionId,
+        amount: montant,
+        currency: 'XOF',
+        channels: 'ALL',
+        description: description,
+        customer_name: "NomClient",
+        customer_surname: "PrenomClient",
+        customer_email: "client@email.com",
+        customer_phone_number: "088767611",
+        customer_address: "AdresseClient",
+        customer_city: "VilleClient",
+        customer_country: "CM",
+        customer_state: "CM",
+        customer_zip_code: "06510"
+});
 }
+
+// Gestion du retour après paiement
+CinetPay.waitResponse(function(data) {
+    if (data.status === "ACCEPTED") {
+        alert("Paiement réussi!");
+} else {
+        alert("Paiement échoué!");
+}
+});
+
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
     document.getElementById("message").textContent = "Message envoyé avec succès !";
