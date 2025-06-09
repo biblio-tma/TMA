@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque - Connexion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>📚 BIBLIOTHÈQUE TCHADJE</h2>
+
+        <!-- Formulaire de connexion -->
+        <div id="login-form">
+            <h3>Connexion</h3>
+            <input type="email" id="login-email" placeholder="Email">
+            <input type="password" id="login-password" placeholder="Mot de passe">
+            <button onclick="login()">Connexion</button>
+            <p>Vous n'avez pas de compte ? <a href="#" onclick="showRegister()">Inscription</a></p>
+        </div>
+
+        <!-- Formulaire d'inscription -->
+        <div id="register-form" style="display: none;">
+            <h3>Inscription</h3>
+            <input type="text" id="register-text" placeholder="Nom" required>
+            <input type="text" id="register-text" placeholder="Prenom" required>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Mot de passe" required>
+            <button onclick="register()">S'inscrire</button>
+            <p>Déjà un compte ? <a href="#" onclick="showLogin()">Connexion</a></p>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>

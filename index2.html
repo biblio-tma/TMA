@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+    <h1>Bienvenue dans la Bibliothèque</h1>
+    <button onclick="logout()">Déconnexion</button>
+    <a href="bib-master.html" download class="btn">login</a>
+    <script>
+        function logout() {
+            firebase.auth().signOut().then(() => {
+                window.location.href = "bib-master.html"; // Retour à la connexion
+            });
+        }
+    </script>
+</body>
+</html>

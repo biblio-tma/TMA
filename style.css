@@ -1,0 +1,190 @@
+/* Style global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Menu Hamburger */
+.menu-btn {
+    font-size: 24px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    background: #2c3e50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Barre latérale */
+.sidebar {
+    width: 210px;
+    height: 100vh;
+    background: #2c3e50;
+    color: white;
+    position: fixed;
+    left: -250px;
+    top: 0;
+    transition: left 0.3s ease;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid #2c3e50;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+/* En-tête */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sections */
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Barre de recherche */
+#recherche {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#searchBar {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 4px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Livres */
+.livres-container {
+    display: inline-block;
+    justify-content: left;
+    gap: 20px;
+}
+
+.livre {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 10px #2c3e50
+    width 250px;
+    margin-top: 10px;
+}
+
+.livre img {
+    width: 150px;
+    height: auto;
+}
+
+.livre .prix {
+    font-size: 18px;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    background-color: #27ae60;
+    color: white; 
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.btn:hover {
+    background-color: #213e50;
+}
+/* Style du bouton Acheter */
+.buy-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.buy-btn:hover {
+    background: #213e50;
+}
+/* Formulaire */
+form {
+    max-width: 400px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Pied de page */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
