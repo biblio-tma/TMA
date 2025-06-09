@@ -23,8 +23,8 @@ function searchBooks() {
 }
 
 function acheter(titre, prix) {
-    let apiKey = "TA_CLE_API_CINETPAY"; // Remplace par ta clé API
-    let siteId = "TON_SITE_ID"; // Remplace par ton ID site
+    let apiKey = "6861781986846ea36f23686.63171484"; // Remplace par ta clé API
+    let siteId = "105897720"; // Remplace par ton ID site
     let transactionId = "DOC_" + Date.now(); // Génère un ID unique pour la transaction
 
     // Redirection vers la page de paiement CinetPay
