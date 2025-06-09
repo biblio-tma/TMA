@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
 }
 
 /* Menu Hamburger */
@@ -13,7 +13,7 @@ body {
     top: 20px;
     left: 20px;
     cursor: pointer;
-    background: #2c3e50;
+    background: #007bff;
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -23,7 +23,7 @@ body {
 .sidebar {
     width: 210px;
     height: 100vh;
-    background: #2c3e50;
+    background: #007bff;
     color: white;
     position: fixed;
     left: -250px;
@@ -43,7 +43,7 @@ body {
 
 .sidebar ul li {
     padding: 15px;
-    border-bottom: 1px solid #2c3e50;
+    border-bottom: 1px solid #007bff;
 }
 
 .sidebar ul li a {
@@ -59,7 +59,7 @@ body {
 
 /* En-tête */
 header {
-    background-color: #2c3e50;
+    background-color: #007bff;
     color: white;
     padding: 20px;
     text-align: center;
@@ -112,7 +112,7 @@ section {
     background: white;
     padding: 10px 15px;
     border-radius: 5px;
-    box-shadow: 10px #2c3e50
+    box-shadow: 10px #007bff
     width 250px;
     margin-top: 10px;
 }
@@ -140,7 +140,7 @@ section {
     margin-top: 10px;
 }
 .btn:hover {
-    background-color: #213e50;
+    background-color: #04682e;
 }
 /* Style du bouton Acheter */
 .buy-btn {
@@ -156,7 +156,7 @@ section {
 }
 
 .buy-btn:hover {
-    background: #213e50;
+    background: #04682e;
 }
 /* Formulaire */
 form {
@@ -171,7 +171,7 @@ input, textarea {
 }
 
 button {
-    background-color: #2c3e50;
+    background-color: #007bff;
     color: white;
     padding: 10px;
     border: none;
@@ -180,7 +180,7 @@ button {
 
 /* Pied de page */
 footer {
-    background-color: #2c3e50;
+    background-color: #007bff;
     color: white;
     text-align: center;
     padding: 10px;
