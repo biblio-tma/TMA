@@ -22,15 +22,18 @@ function searchBooks() {
     }
 }
 
-function acheter(titre, prix) {
-    let apiKey = "6861781986846ea36f23686.63171484"; // Remplace par ta clé API
-    let siteId = "105897720"; // Remplace par ton ID site
-    let transactionId = "DOC_" + Date.now(); // Génère un ID unique pour la transaction
+function payer(idLivre, prix) {
+  const phone = prompt("Entrez votre numéro de téléphone pour payer via Cinepay :");
+  if (!phone) return;
 
-    // Redirection vers la page de paiement CinetPay
-    let paymentURL = `https://secure.cinetpay.com/?apikey=${apiKey}&site_id=${siteId}&transaction_id=${transactionId}&amount=${prix}&currency=XOF&description=${encodeURIComponent(titre)}&notify_url=https://tonsite.com/notification&return_url=https://tonsite.com/success`;
+  const apikey = "6861781986846ea36f23686.63171484";
+  const site_id = "105897720";
+  const return_url = `https://tonsite.com/telechargement.html?livre=${idLivre}`;
 
-    window.location.href = paymentURL;
+  // 🔁 URL de redirection Cinepay avec tes infos
+  const cinepayURL = `https://app.cinepay.sn/pay?apikey=${apikey}&site_id=${site_id}&amount=${prix}&item_ref=${idLivre}&phone_number=${phone}&return_url=${encodeURIComponent(return_url)}`;
+
+  window.location.href = cinepayURL;
 }
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
