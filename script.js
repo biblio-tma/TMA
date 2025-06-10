@@ -22,46 +22,16 @@ function searchBooks() {
     }
 }
 
-// Importation du SDK CinetPay
-<script src="https://cdn.cinetpay.com/seamless/main.js" type="text/javascript"></script>
+function acheter(titre, prix) {
+    let apiKey = "TA_CLE_API_CINETPAY"; // Remplace par ta clé API
+    let siteId = "TON_SITE_ID"; // Remplace par ton ID site
+    let transactionId = "DOC_" + Date.now(); // Génère un ID unique pour la transaction
 
-// Initialisation des paramètres
-CinetPay.setConfig({
-    apikey: '6861781986846ea36f23686.63171484', // Remplacez par votre clé API
-    site_id: 105897720, // Remplacez par votre ID de site
-    notify_url: 'https://mondomaine.com/notify/', // URL de notification
-    close_after_response: true // Fermer le guichet après paiement
-});
+    // Redirection vers la page de paiement CinetPay
+    let paymentURL = `https://secure.cinetpay.com/?apikey=${apiKey}&site_id=${siteId}&transaction_id=${transactionId}&amount=${prix}&currency=XOF&description=${encodeURIComponent(titre)}&notify_url=https://tonsite.com/notification&return_url=https://tonsite.com/success`;
 
-// Fonction pour déclencher le paiement
-function effectuerPaiement(transactionId, montant, description) {
-    CinetPay.getCheckout({
-        transaction_id: transactionId,
-        amount: montant,
-        currency: 'XOF',
-        channels: 'ALL',
-        description: description,
-        customer_name: "NomClient",
-        customer_surname: "PrenomClient",
-        customer_email: "client@email.com",
-        customer_phone_number: "088767611",
-        customer_address: "AdresseClient",
-        customer_city: "VilleClient",
-        customer_country: "CM",
-        customer_state: "CM",
-        customer_zip_code: "06510"
-});
+    window.location.href = paymentURL;
 }
-
-// Gestion du retour après paiement
-CinetPay.waitResponse(function(data) {
-    if (data.status === "ACCEPTED") {
-        alert("Paiement réussi!");
-} else {
-        alert("Paiement échoué!");
-}
-});
-
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
     document.getElementById("message").textContent = "Message envoyé avec succès !";
