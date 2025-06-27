@@ -21,8 +21,9 @@
          <li><a href="#Corrige des fiches de TD"><i class="fas fa-book"></i> Corrige des fiches de TD</a></li>
          <li><a href="#Epreuves"><i class="fas fa-book"></i> Epreuves</a></li>
          <li><a href="#Corrige des epreuves"><i class="fas fa-book"></i> Corrige des epreuves</a></li>
-         <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-         <li><a href="#" onclick="toggleMenu()"><i class="fas fa-times"></i> Fermer</a></li>
+         <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+         <li><a href"admin.html"><i class="fas fa-book"></i> Add</a></li>
+         <li><a href="#" onclick="event.preventDefault();toggleMenu();"><i class="fas fa-times"></i> Fermer</a></li>
      </ul>
  </nav>     
     <!--En-tête -->
@@ -33,14 +34,7 @@
     <!-- Section Accueil -->
     <section id="accueil">
         <h2>Bienvenue dans la meilleure des Bibliothèques ou vous retrouverez tous vos documents</h2>
-        <p>📚 Un fois de plus bienvenue dans la Bibliothèque TMA Votre Porte d’Accès au Savoir ! 📖</p>
-        <p>Découvrez un large choix de livres, documents et ressources pour enrichir vos connaissances.</p>
-        <p>✨ Pourquoi choisir la Bibliothèque TMA ?</p> 
-          <p>✅Accès à des milliers de livres et documents.</p>
-          <p>✅Téléchargements rapides et faciles.</p>
-          <p>✅Un espace moderne et convivial pour apprendre.</p>
-          <p>🔍Recherchez, explorez et téléchargez vos ouvrages favoris dès maintenant !</p>
-          <p>📍Visitez-nous ou consultez notre catalogue en ligne !</p>
+        <h2><p>faite usage du menu hamburger et de la barre de recherche pour rapidement retrouvez vos documents </p></h2>
     </section>
 
     <!-- Barre de recherche -->
@@ -259,23 +253,9 @@
                 <button class="buy-btn" onclick="acheter('td2meca', 300)">🛒 Acheter</button>
             </div>
         </div>
-        <p style="color:#007bff" , align="right"><button class="back-btn" onclick="goToHome()">🏠 Retour à l’accueil</button></p>
+        <p style="color:#442304" , align="right"><button class="back-btn" onclick="goToHome()">🏠 Retour à l’accueil</button></p>
     </section>
 
-    <!-- Section Contact -->
-    <section id="contact">
-        <h2>Contactez-nous</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Votre Nom" required>
-            <input type="email" placeholder="Votre Email" required>
-            <textarea placeholder="Votre Message" required></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
-        <p id="message"></p>
-        <p style="color:#007bff" , align="right"><button class="back-btn" onclick="goToHome()">🏠 Retour à l’accueil</button></p>
-    </section>
-
-    <!-- Pied de page -->
     <footer>
         <p>© 2025 Bibliothèque TMA | Tous droits réservés.</p>
     </footer>
