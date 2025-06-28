@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <!-- Menu Hamburger -->
  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
- <!-- Barre latérale -->
  <nav class="sidebar" id="sidebar">
      <h2>📚 Menu</h2>
      <ul>
@@ -26,23 +23,17 @@
          <li><a href="#" onclick="event.preventDefault();toggleMenu();"><i class="fas fa-times"></i> Fermer</a></li>
      </ul>
  </nav>     
-    <!--En-tête -->
     <header>
         <h1>BIBLIOTHEQUE TMA</h1>
     </header>
 <body>
-    <!-- Section Accueil -->
     <section id="accueil">
         <h2>Bienvenue dans la meilleure des Bibliothèques ou vous retrouverez tous vos documents</h2>
         <h2><p>faite usage du menu hamburger et de la barre de recherche pour rapidement retrouvez vos documents </p></h2>
     </section>
-
-    <!-- Barre de recherche -->
     <section sid="recherche">
         <input type="text" id="searchBar" placeholder="Rechercher un livre..." onkeyup="searchBooks()">
     </section>
-
-    <!-- Section Livres -->
     <section id="Livres">
         <h2>Nos Livres Disponibles</h2>
         <div class="livres-container">
