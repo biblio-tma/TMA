@@ -1,29 +1,38 @@
-/* Style global */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    height: 100%;
+    background-color: #f4f4f4;
 }
-
-/* Menu Hamburger */
+.background {
+background-image: url("bg1.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 100vh;
+color: white;
+text-align: center;
+padding-top: 100px;
+}
 .menu-btn {
-    font-size: 24px;
+    font-size: 28px;
     position: fixed;
-    top: 20px;
-    left: 20px;
     cursor: pointer;
-    background: #007bff;
+    background: #442304;
     color: white;
-    padding: 10px;
+    padding: 8px;
+    left: 1%;
     border-radius: 5px;
+    margin-top: 31px;
 }
 
-/* Barre latérale */
+
 .sidebar {
-    width: 210px;
+    width: 230px;
     height: 100vh;
-    background: #007bff;
+    background: #442304;
     color: white;
     position: fixed;
     left: -250px;
@@ -43,7 +52,7 @@ body {
 
 .sidebar ul li {
     padding: 15px;
-    border-bottom: 1px solid #007bff;
+    border-bottom: 1px solid #442304;
 }
 
 .sidebar ul li a {
@@ -57,9 +66,8 @@ body {
     margin-right: 10px;
 }
 
-/* En-tête */
 header {
-    background-color: #007bff;
+    background-color: #442304;
     color: white;
     padding: 20px;
     text-align: center;
@@ -81,13 +89,11 @@ nav a {
     font-weight: bold;
 }
 
-/* Sections */
 section {
     padding: 50px;
     text-align: center;
 }
 
-/* Barre de recherche */
 #recherche {
     text-align: center;
     margin-bottom: 20px;
@@ -101,7 +107,6 @@ section {
     border-radius: 5px;
 }
 
-/* Livres */
 .livres-container {
     display: inline-block;
     justify-content: left;
@@ -110,28 +115,27 @@ section {
 
 .livre {
     background: white;
-    padding: 10px 15px;
+    margin-top: 20px;
+    padding: 20px;
     border-radius: 5px;
-    box-shadow: 10px #007bff
-    width 250px;
-    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1)
+    width 1800px;
 }
 
 .livre img {
-    width: 150px;
+    width: 160px;
     height: auto;
 }
 
 .livre .prix {
     font-size: 18px;
     font-weight: bold;
-    color: #27ae60;
+    color: #442304;
 }
 
-/* Boutons */
 .btn {
     display: inline-block;
-    background-color: #27ae60;
+    background-color: #442304;
     color: white; 
     padding: 10px 15px;
     text-decoration: none;
@@ -140,14 +144,14 @@ section {
     margin-top: 10px;
 }
 .btn:hover {
-    background-color: #04682e;
+    background-color: chocolate;
 }
-/* Style du bouton Acheter */
+
 .buy-btn {
     display: inline-block;
     margin-top: 10px;
     padding: 10px;
-    background: #27ae60;
+    background:#442304;
     color: white;
     border: none;
     cursor: pointer;
@@ -156,35 +160,23 @@ section {
 }
 
 .buy-btn:hover {
-    background: #04682e;
-}
-/* Formulaire */
-form {
-    max-width: 400px;
-    margin: auto;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    background: chocolate;
 }
 
 button {
-    background-color: #007bff;
+    background-color: #442304;
     color: white;
     padding: 10px;
     border: none;
     cursor: pointer;
 }
 
-/* Pied de page */
 footer {
-    background-color: #007bff;
+    background-color: #442304;
     color: white;
     text-align: center;
     padding: 10px;
-    position: relative;
+    position: static;
     bottom: 0;
     width: 100%;
 }
