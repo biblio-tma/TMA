@@ -1,21 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliothèque</title>
-    <link rel="stylesheet" href="Styles.css">
-</head>
-<body>
-    <h1>Bienvenue dans la Bibliothèque</h1>
-    <button onclick="logout()">Déconnexion</button>
-    <a href="bib-master.html" download class="btn">login</a>
-    <script>
-        function logout() {
-            firebase.auth().signOut().then(() => {
-                window.location.href = "bib-master.html"; // Retour à la connexion
-            });
-        }
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>Administration</title>
+        <link rel="stylesheet" href="stylee.css">
+    </head>
+    <header>Bibliothèque TMA Administration</header>
+    <body>
+            <div id="form" class="forms">
+                <h3>Titre</h3>
+                <input type="text" id="name" placeholder="entrez le titre", required>
+                <h3>Section</h3>
+                <select name="section" id="section">
+                    <option value="livres">Livres</option>
+                    <option value="fiche de TD">Fiche de TD</option>
+                    <option value="corrige des fiches de TD">Corrige des fiches de TD</option>
+                    <option value="Epreuves">Epreuves</option>
+                    <option value="Corrige des epreuves">Corrige des epreuves</option>
+                </select>
+                <h3>Prix</h3>
+                <input type="text" id="price" placeholder="prix du document", required>
+                <h3>Url du fichier</h3>
+                <input type="url" id="url" placeholder="entrez l'url", required>
+                <p align="center"><button onclick="addDocuments()" type="submit">Ajouter</button></p>
+        </div>
+        <div class="forms">
+    <h2>Documents dans la bibliothèque</h2>
+    <div id="docList"></div>
+  </div>
+
+        <footer>© 2025 Bibliothèque TMA | Tous droits réservés.</footer>
+        <script>
+             const form = document.getElementById('form');
+    const docList = document.getElementById('docList');
+    let documents = JSON.parse(localStorage.getItem('documents')) || [];
+
+    function afficherDocuments() {
+      docList.innerHTML = '';
+      documents.forEach((doc, index) => {
+        const div = document.createElement('div');
+        div.className = 'document';
+        div.innerHTML = `
+          <strong>${doc.name}</strong><br>
+          Section : ${doc.section}<br>
+          Prix : ${doc.price}<br>
+          <a href="${doc.url}" target="_blank">Ouvrir le document</a><br>
+          <button onclick="supprimer(${index})">Supprimer</button>
+        `;
+        docList.appendChild(div);
+      });
+    }
+
+    function sauvegarder() {
+      localStorage.setItem('documents', JSON.stringify(documents));
+    }
+form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const section = document.getElementById('section').value;
+      const price = document.getElementById('price').value;
+      const url = document.getElementById('url').value;
+
+      documents.push({ name, section, price, url });
+      sauvegarder();
+      afficherDocuments();
+      form.reset();
+    });
+
+    function supprimer(index) {
+      if (confirm("Supprimer ce document ?")) {
+        documents.splice(index, 1);
+        sauvegarder();
+        afficherDocuments();
+      }
+    }
+
+    afficherDocuments();
+
+        </script>
+    </body>
 </html>
