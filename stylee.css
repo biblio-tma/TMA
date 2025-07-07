@@ -1,9 +1,10 @@
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    margin:0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
@@ -12,7 +13,9 @@ header {
     padding: 40px;
     text-align: center;
 }
-
+h3{
+    display: flex;
+}
 .background {
     background-image: url("bg1.jpg");
     background-position: center;
@@ -22,6 +25,19 @@ header {
     height: 100vh;
     text-align: center;
     padding-top: 100px;
+}
+.forms {
+    text-align: center;
+}
+#form {
+    padding: 50px;
+    margin-top: 20px;
+    width: 400px;
+    background-color: white;
+    box-shadow: 0 4px 8px white;
+    border-radius: 8px;  
+     max-width: 400px;
+    margin: auto;  
 }
 .btn {
     background-color: #442304;
@@ -33,19 +49,16 @@ header {
 .btn:hover {
     background-color: chocolate;
 }
-form {
-    max-width: 400px;
-    margin: auto;
-}
 input,textarea {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 button {
     background-color: #442304;
     color: white;
     padding: 10px;
+    border-radius: 8px;
 }
 button:hover {
     background-color: chocolate;
@@ -58,4 +71,75 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+@media(max-width: 786px ) {
+    *{
+        max-width: 100%;
+        margin: auto;
+    }
+    
+header {
+    background-color: #442304;
+    color: white;
+    padding-top: 10%;
+    text-align: center;
+}
+h3{
+    display: flex;
+}
+.background {
+    background-image: url("bg1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    text-align: center;
+    padding-top: 10%;
+}
+.forms {
+    text-align: center;
+}
+#form {
+    padding: 5%;
+    margin-top: 20%;
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px white;
+    border-radius: 8px;  
+}
+.btn {
+    background-color: #442304;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.btn:hover {
+    background-color: chocolate;
+}
+input,textarea {
+    width: 90%;
+    padding: 3%;
+    text-align: center;
+    margin: 10px 0;
+}
+    button {
+    background-color: #442304;
+    color: white;
+    padding: 3%;
+    border-radius: 10px;
+}
+footer {
+    background-color: #442304;
+    color: white;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 10px;
+}
 }
